@@ -48,7 +48,7 @@ object DishRepository {
         )
     )
 
-    fun getDish(id: Int) = dishes.firstOrNull { it.id == id }
+    fun getDish(id: Int) = dishes.firstOrNull { it.id == id } // méthode getter pour pouvoir récupérer dans un autre fichier
 }
 
 data class Dish(

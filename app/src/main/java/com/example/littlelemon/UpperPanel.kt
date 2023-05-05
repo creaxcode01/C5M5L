@@ -1,6 +1,7 @@
 package com.example.littlelemon
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
@@ -15,27 +16,36 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.littlelemon.ui.theme.LittleLemonColor
 
 @Composable
 fun UpperPanel() {
     Column(
         modifier = Modifier
             .padding(start = 12.dp, end = 12.dp, top = 16.dp, bottom = 16.dp)
+            .background(LittleLemonColor.green)
+
     ) {
         Text(
             text = stringResource(id = R.string.title),
             fontSize = 40.sp,
             fontWeight = FontWeight.Bold,
+            color = LittleLemonColor.yellow
+
         )
         Text(
             text = stringResource(id = R.string.location),
             fontSize = 24.sp,
+            color = LittleLemonColor.cloud
+
         )
+
+
         Row(
             horizontalArrangement = Arrangement.SpaceBetween,
             modifier = Modifier
                 .padding(top = 20.dp)
-        ) {
+        ) {  // début de Row bodu Scope
             Text(
                 text = stringResource(id = R.string.description),
                 style = MaterialTheme.typography.body1,
@@ -43,12 +53,18 @@ fun UpperPanel() {
                     .padding(bottom = 28.dp, end = 20.dp)
                     .fillMaxWidth(0.6f)
             )
+
+
+
             Image(
                 painter = painterResource(id = R.drawable.upperpanelimage),
                 contentDescription = "Upper Panel Image",
                 modifier = Modifier.clip(RoundedCornerShape(10.dp))
             )
-        }
+        } // fin de Row body Scope
+
+
+
         Button(
             onClick = { }
         ) {

@@ -17,6 +17,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.example.littlelemon.ui.theme.LittleLemonColor
 
 @Composable
 fun LowerPanel(navController: NavHostController, dishes: List<Dish> = listOf()) {
@@ -86,7 +87,7 @@ fun MenuDish(navController: NavHostController? = null, dish: Dish) {
 
 
                 Text(
-                    text = "${dish.price}", // parceque dish.price est un int
+                    text = "$" +"${dish.price}", // parceque dish.price est un int // concaténation de chaîne
                     style = MaterialTheme.typography.body2
                 )
                 
@@ -98,7 +99,7 @@ fun MenuDish(navController: NavHostController? = null, dish: Dish) {
             Image(
                 painter = painterResource(id = dish.imageResource),
                 contentDescription = null,
-                modifier = Modifier.clip(RoundedCornerShape(1.dp))
+                modifier = Modifier.clip(RoundedCornerShape(10.dp))
 
             )
 
@@ -116,5 +117,6 @@ fun MenuDish(navController: NavHostController? = null, dish: Dish) {
     Divider(
         modifier = Modifier.padding(start = 8.dp, end = 8.dp),
         thickness = 1.dp,
+        color = LittleLemonColor.yellow
     )
 }
